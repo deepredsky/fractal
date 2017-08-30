@@ -18,3 +18,6 @@ main = do
     writePng "examples/fractal_tree_3.png" fractal_tree_3
     writePng "examples/fractal_tree_4.png" fractal_tree_4
     writePng "examples/fractal_tree_5.png" fractal_tree_5
+
+    let koch_snow_flake = drawPicture 1 [(red, kochSnowFlake 6 (Line (V2 600 550) (V2 200 550)))]
+    writePng "examples/koch_snow_flake.png" koch_snow_flake
