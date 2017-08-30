@@ -21,3 +21,6 @@ main = do
 
     let koch_snow_flake = drawPicture 1 [(red, kochSnowFlake 6 (Line (V2 600 550) (V2 200 550)))]
     writePng "examples/koch_snow_flake.png" koch_snow_flake
+
+    let sierpinski_sieve = drawPicture 1 $ sierpinskiSieve blue 6 (Line (V2 650 600) (V2 150 600))
+    writePng "examples/sierpinski_sieve.png" sierpinski_sieve

@@ -13,3 +13,7 @@ Experiments with some graphics libraries in Haskell
 ## Koch SnowFlake
 
 ![](examples/koch_snow_flake.png)
+
+## Sierpiński Sieve
+
+![](examples/sierpinski_sieve.png)

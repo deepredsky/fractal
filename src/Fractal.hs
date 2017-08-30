@@ -42,3 +42,22 @@ kochSnowFlake n baseLine =
             l1 = scaleLine (1/3) baseLine
             l2@(Line p0 p1) = joinLine l1 l1
             Line _ p2 = rotateLine (pi * 5/3) l2
+
+sierpinskiSieve color n baseLine =
+  sierpinskiSieve' color n [p1, p2, p3]
+    where
+      [p1, p2, p3, _] = shape 3 baseLine
+
+      sierpinskiSieve' color n [p1', p2', p3']
+        | n == 0 = []
+        | otherwise = [(color, [p12, p23, p13, p12])]
+                      ++ sierpinskiSieve' color (n-1) [p1', p12, p13]
+                      ++ sierpinskiSieve' color (n-1) [p12, p2', p23]
+                      ++ sierpinskiSieve' color (n-1) [p23, p13, p3']
+          where
+            side1 = Line p1' p2'
+            side2 = Line p2' p3'
+            side3 = Line p3' p1'
+            Line _ p12 = scaleLine (1/2) side1
+            Line _ p23 = scaleLine (1/2) side2
+            Line _ p13 = scaleLine (1/2) side3
